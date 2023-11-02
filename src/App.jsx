@@ -3,11 +3,14 @@ import SortingProvider from "./contexts/SortingContext";
 
 function App() {
     return (
+        <>
         <SortingProvider>
             <div className="container mx-auto px-4">
                 <SortingChart />
             </div>
         </SortingProvider>
+        
+        </>
     );
 }
 

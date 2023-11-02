@@ -4,6 +4,8 @@ import { SortingContext } from "../contexts/SortingContext";
 import algorithmInfos from "../data/algorithmInfos";
 
 function SortingChart() {
+
+    const teamMembers = ["KALLA PRAKASH", "SIVA CHITIKELA",'PITTU PRASANTH',"ARANYA","Debajyoti Roy Barman"];
     const { sortingState, generateSortingArray, startVisualizing, changeSortingSpeed, changeAlgorithm } = useContext(SortingContext);
 
     useEffect(() => {
@@ -13,53 +15,47 @@ function SortingChart() {
     return (
         <div className="mt-4 mb-4 flex flex-col items-center">
             <img src="/logo.png" className="max-w-lg mb-6 w-full" />
-            
+
             <div className="flex flex-wrap justify-center gap-3 mb-6">
                 <button
                     onClick={() => changeAlgorithm("bubble_sort")}
-                    className={`bg-carbon text-white px-5 py-3 rounded-3xl ${
-                        sortingState.algorithm === "bubble_sort" ? "bg-turquoise-dark" : "hover:bg-carbon-light"
-                    } transition-all`}
+                    className={`bg-carbon text-white px-5 py-3 rounded-3xl ${sortingState.algorithm === "bubble_sort" ? "bg-turquoise-dark" : "hover:bg-carbon-light"
+                        } transition-all`}
                 >
                     Bubble Sort
                 </button>
                 <button
                     onClick={() => changeAlgorithm("insertion_sort")}
-                    className={`bg-carbon text-white px-5 py-3 rounded-3xl ${
-                        sortingState.algorithm === "insertion_sort" ? "bg-turquoise-dark" : "hover:bg-carbon-light"
-                    } transition-all`}
+                    className={`bg-carbon text-white px-5 py-3 rounded-3xl ${sortingState.algorithm === "insertion_sort" ? "bg-turquoise-dark" : "hover:bg-carbon-light"
+                        } transition-all`}
                 >
                     Insertion Sort
                 </button>
                 <button
                     onClick={() => changeAlgorithm("selection_sort")}
-                    className={`bg-carbon text-white px-5 py-3 rounded-3xl ${
-                        sortingState.algorithm === "selection_sort" ? "bg-turquoise-dark" : "hover:bg-carbon-light"
-                    } transition-all`}
+                    className={`bg-carbon text-white px-5 py-3 rounded-3xl ${sortingState.algorithm === "selection_sort" ? "bg-turquoise-dark" : "hover:bg-carbon-light"
+                        } transition-all`}
                 >
                     Selection Sort
                 </button>
                 <button
                     onClick={() => changeAlgorithm("merge_sort")}
-                    className={`bg-carbon text-white px-5 py-3 rounded-3xl ${
-                        sortingState.algorithm === "merge_sort" ? "bg-turquoise-dark" : "hover:bg-carbon-light"
-                    } transition-all`}
+                    className={`bg-carbon text-white px-5 py-3 rounded-3xl ${sortingState.algorithm === "merge_sort" ? "bg-turquoise-dark" : "hover:bg-carbon-light"
+                        } transition-all`}
                 >
                     Merge Sort
                 </button>
                 <button
                     onClick={() => changeAlgorithm("quick_sort")}
-                    className={`bg-carbon text-white px-5 py-3 rounded-3xl ${
-                        sortingState.algorithm === "quick_sort" ? "bg-turquoise-dark" : "hover:bg-carbon-light"
-                    } transition-all`}
+                    className={`bg-carbon text-white px-5 py-3 rounded-3xl ${sortingState.algorithm === "quick_sort" ? "bg-turquoise-dark" : "hover:bg-carbon-light"
+                        } transition-all`}
                 >
                     Quick Sort
                 </button>
                 <button
                     onClick={() => changeAlgorithm("radix_sort")}
-                    className={`bg-carbon text-white px-5 py-3 rounded-3xl ${
-                        sortingState.algorithm === "radix_sort" ? "bg-turquoise-dark" : "hover:bg-carbon-light"
-                    } transition-all`}
+                    className={`bg-carbon text-white px-5 py-3 rounded-3xl ${sortingState.algorithm === "radix_sort" ? "bg-turquoise-dark" : "hover:bg-carbon-light"
+                        } transition-all`}
                 >
                     Radix Sort
                 </button>
@@ -101,7 +97,7 @@ function SortingChart() {
                     <h1 className="font-bold text-2xl md:text-4xl">{algorithmInfos[sortingState.algorithm].name}</h1>
                     <p className="whitespace-pre-line mb-6">{algorithmInfos[sortingState.algorithm].description}</p>
                     <div className="w-full h-0.5 bg-carbon-light mb-6" />
-                    
+
                     <div className="overflow-auto">
                         <table className="w-full text-left">
                             <thead>
@@ -133,6 +129,16 @@ function SortingChart() {
                                 ))}
                             </tbody>
                         </table>
+                        <div className="mt-6 text-lg font-bold">Team Members:</div>
+                        <ul className="text-lg flex flex-col items-center">
+                            {teamMembers.map((member, index) => (
+                                <li key={index} className="mb-2">
+                                    {member}
+                                </li>
+                            ))}
+                        </ul>
+
+
                     </div>
                 </div>
             </div>
