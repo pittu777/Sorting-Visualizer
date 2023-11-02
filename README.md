@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # React.js Sorting Algorithm Visualizer
 
@@ -66,3 +67,6 @@ Contributions are welcome! If you have a feature request or bug report, please o
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+=======
+# Sorting-Visualizer
+>>>>>>> 2e1b264704b8d06bb55f6b6817a9f5e5b78335b4
